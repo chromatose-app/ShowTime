@@ -5,3 +5,6 @@
 
 .build/
 .swiftpm/
+
+# Personal Xcode settings for derived data
+/DerivedData/*
