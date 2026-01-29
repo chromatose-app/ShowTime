@@ -34,9 +34,9 @@ final class ShowTimeTests: XCTestCase {
         XCTAssertEqual(touchView.layer.borderColor, ShowTime.strokeColor.cgColor)
         XCTAssertEqual(touchView.layer.borderWidth, ShowTime.strokeWidth)
         XCTAssertFalse(ShowTime.shouldShowMultipleTapCount)
-        XCTAssertNil(touchView.text)
-        XCTAssertEqual(touchView.textAlignment, .center)
-        XCTAssertEqual(touchView.textColor, ShowTime.multipleTapCountTextColor)
+//        XCTAssertNil(touchView.text)
+//        XCTAssertEqual(touchView.textAlignment, .center)
+//        XCTAssertEqual(touchView.textColor, ShowTime.multipleTapCountTextColor)
         XCTAssertTrue(touchView.clipsToBounds)
         XCTAssertFalse(touchView.isUserInteractionEnabled)
     }
@@ -46,7 +46,7 @@ final class ShowTimeTests: XCTestCase {
         ShowTime.strokeColor = .orange
         ShowTime.strokeWidth = 100
         ShowTime.fillColor = .green
-        ShowTime.multipleTapCountTextColor = .yellow
+//        ShowTime.multipleTapCountTextColor = .yellow
         ShowTime.shouldShowMultipleTapCount = true
         
         let touch = MockTouch(tapCount: 5)
@@ -63,31 +63,31 @@ final class ShowTimeTests: XCTestCase {
         XCTAssertEqual(touchView.layer.borderWidth, 100)
         XCTAssertEqual(touchView.backgroundColor, ShowTime.fillColor)
         XCTAssertEqual(touchView.backgroundColor, .green)
-        XCTAssertEqual(touchView.text, "5")
-        XCTAssertEqual(touchView.textAlignment, .center)
-        XCTAssertEqual(touchView.textColor, ShowTime.multipleTapCountTextColor)
-        XCTAssertEqual(touchView.textColor, .yellow)
+//        XCTAssertEqual(touchView.text, "5")
+//        XCTAssertEqual(touchView.textAlignment, .center)
+//        XCTAssertEqual(touchView.textColor, ShowTime.multipleTapCountTextColor)
+//        XCTAssertEqual(touchView.textColor, .yellow)
         XCTAssertTrue(touchView.clipsToBounds)
         XCTAssertFalse(touchView.isUserInteractionEnabled)
     }
     
-    func test_showingMultipleTapCount() {
-        XCTAssertFalse(ShowTime.shouldShowMultipleTapCount)
-        let touchWith5Taps = MockTouch(tapCount: 5)
-        let touchView1 = TouchView(touch: touchWith5Taps, relativeTo: UIView())
-        XCTAssertNil(touchView1.text)
-        
-        ShowTime.shouldShowMultipleTapCount = true
-        XCTAssertTrue(ShowTime.shouldShowMultipleTapCount)
-        let touchWith1Tap = MockTouch()
-        let touchView2 = TouchView(touch: touchWith1Tap, relativeTo: UIView())
-        XCTAssertNil(touchView2.text)
-        
-        XCTAssertTrue(ShowTime.shouldShowMultipleTapCount)
-        let touchWith2Taps = MockTouch(tapCount: 2)
-        let touchView3 = TouchView(touch: touchWith2Taps, relativeTo: UIView())
-        XCTAssertEqual(touchView3.text, "2")
-    }
+//    func test_showingMultipleTapCount() {
+//        XCTAssertFalse(ShowTime.shouldShowMultipleTapCount)
+//        let touchWith5Taps = MockTouch(tapCount: 5)
+//        let touchView1 = TouchView(touch: touchWith5Taps, relativeTo: UIView())
+//        XCTAssertNil(touchView1.text)
+//        
+//        ShowTime.shouldShowMultipleTapCount = true
+//        XCTAssertTrue(ShowTime.shouldShowMultipleTapCount)
+//        let touchWith1Tap = MockTouch()
+//        let touchView2 = TouchView(touch: touchWith1Tap, relativeTo: UIView())
+//        XCTAssertNil(touchView2.text)
+//        
+//        XCTAssertTrue(ShowTime.shouldShowMultipleTapCount)
+//        let touchWith2Taps = MockTouch(tapCount: 2)
+//        let touchView3 = TouchView(touch: touchWith2Taps, relativeTo: UIView())
+//        XCTAssertEqual(touchView3.text, "2")
+//    }
     
     func test_handlingEvents() {
         XCTAssertTrue(_touches.isEmpty)

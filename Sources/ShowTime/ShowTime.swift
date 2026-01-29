@@ -67,12 +67,12 @@ public final class ShowTime: NSObject {
     
     /// The colour of the text to use when showing multiple tap counts.
     /// (`.black` by default)
-    @objc public static var multipleTapCountTextColor: UIColor = .black
-    
+//    @objc public static var multipleTapCountTextColor: UIColor = .black
+
     /// The font of the test to use when showing multiple tap counts.
     /// (System 17 bold by default)
-    @objc public static var multipleTapCountTextFont: UIFont = .systemFont(ofSize: 17, weight: .bold)
-    
+//    @objc public static var multipleTapCountTextFont: UIFont = .systemFont(ofSize: 17, weight: .bold)
+
     /// Whether the visual touch should visually show how much force is applied.
     /// (`true` by default)
     @objc public static var shouldShowForce = true
@@ -103,8 +103,8 @@ public extension UIColor {
     
 }
 
-class TouchView: UILabel {
-    
+class TouchView: UIView {
+
     /// Creates a new instance representing a touch to visually display.
     ///
     /// - Parameters:
@@ -171,10 +171,10 @@ class TouchView: UILabel {
         layer.borderColor = ShowTime.strokeColor.cgColor
         layer.borderWidth = ShowTime.strokeWidth
         backgroundColor = ShowTime.fillColor == .auto ? ShowTime.strokeColor.withAlphaComponent(0.5) : ShowTime.fillColor
-        text = ShowTime.shouldShowMultipleTapCount && touch.tapCount > 1 ? "\(touch.tapCount)" : nil
-        textAlignment = .center
-        textColor = ShowTime.multipleTapCountTextColor
-        font = ShowTime.multipleTapCountTextFont
+//        text = ShowTime.shouldShowMultipleTapCount && touch.tapCount > 1 ? "\(touch.tapCount)" : nil
+//        textAlignment = .center
+//        textColor = ShowTime.multipleTapCountTextColor
+//        font = ShowTime.multipleTapCountTextFont
         clipsToBounds = true
         isUserInteractionEnabled = false
     }
