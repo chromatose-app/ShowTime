@@ -1,3 +1,26 @@
+# WARNING
+
+This is an unmaintained fork. Do not use in production.
+
+This repo is just what I hacked together to get this working for my use-case. It fixes some bugs, but disables other features.
+
+I have no intention to maintain this or keep it stable. So I wouldn't use it in production.
+
+This exists for reference only with the hope that some brave soul will someday take over so this project becomes actively maintained again.
+
+ This is taken from v2.5.3 of the original project package here:
+ https://github.com/KaneCheshire/ShowTime
+
+
+## Notes about changes/usage
+
+- https://github.com/KaneCheshire/ShowTime/issues/63
+- If using Swift 6 concurrency importing with @preconcurrency must be used.
+
+
+---
+
+
 # It's ShowTime! 🎥
 
 - [Installation](#installation)
