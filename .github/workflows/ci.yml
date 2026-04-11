@@ -1,32 +1,17 @@
-
 name: CI
 
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ '*' ]
+    branches: ['*']
 
 jobs:
-  test_macos_12:
+  test:
     name: Run tests
-    runs-on: macOS-12
+    runs-on: macOS-15
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
-      - name: Set Xcode version to 14.2
-        run: sudo xcode-select -switch /Applications/Xcode_14.2.app
-      - name: Test iOS 16.2
-        run: xcodebuild test -scheme ShowTime -sdk iphonesimulator16.2 -destination "OS=16.2,name=iPhone 14"
-        
-  build_cocoapods:
-    name: Ensure Cocoapods builds
-    runs-on: macOS-latest
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Set Xcode version to 14.2
-        run: sudo xcode-select -switch /Applications/Xcode_14.2.app
-      - name: Build Cocoapods
-        run: pod lib lint --verbose --allow-warnings
+        uses: actions/checkout@v4
+      - name: Test
+        run: xcodebuild test -scheme ShowTime -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 17 Pro"

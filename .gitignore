@@ -1,10 +1,16 @@
-/ShowTime.xcodeproj/xcuserdata/*
-/Example/ShowTime.xcworkspace/xcuserdata/*
+# Xcode user data
+**/xcuserdata/
 *.xcuserstate
-.DS_Store
+*.xcuserdatad/
 
+# Xcode build / derived data
 .build/
 .swiftpm/
+DerivedData/
+build/
 
-# Personal Xcode settings for derived data
-/DerivedData/*
+# macOS
+.DS_Store
+
+# Claude Code settings (local to this repo)
+.claude/
