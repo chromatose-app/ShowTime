@@ -9,7 +9,7 @@ Lightweight iOS library that displays circular touch indicators on screen. Usefu
 Add via Swift Package Manager:
 
 ```
-https://github.com/hekulis-org/ShowTime.git
+https://github.com/chromatose-app/ShowTime.git
 ```
 
 ## Usage
